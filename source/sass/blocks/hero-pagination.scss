@@ -1,0 +1,92 @@
+.hero-pagination {
+  border-radius: 12px 12px 0 0;
+  background-color: #ffffff;
+  padding-right: 30px;
+  box-sizing: border-box;
+  max-width: 290px;
+
+  --nb-r: 10px;
+  --nb-cor1-rw: 12px;
+  --nb-cor1-rh: 12px;
+  --nb-cor2-rw: 12px;
+  --nb-cor2-rh: 12px;
+  --nb-w: 10px;
+
+  @media (min-width: $tablet-width) {
+    border-radius: 20px 20px 0 0;
+    padding-right: 60px;
+    max-width: 659px;
+
+    --nb-r: 20px;
+    --nb-cor1-rw: 20px;
+    --nb-cor1-rh: 20px;
+    --nb-cor2-rw: 20px;
+    --nb-cor2-rh: 20px;
+    --nb-w: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 968px;
+  }
+}
+
+.hero-pagination__wrapper {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 16px;
+
+  @media (min-width: $tablet-width) {
+    padding: 14px 20px;
+  }
+}
+
+.hero-pagination__bullet {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  border: 2px solid $extra-color;
+  background-color: transparent;
+  display: block;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, opacity;
+
+  &:hover {
+    background-color: $extra-color;
+    border-color: #ffffff;
+    opacity: 70%;
+  }
+
+  &:focus {
+    border-color: $extra-color;
+    background-color: $extra-color;
+    opacity: 100%;
+    outline: none;
+  }
+
+  &:active {
+    background-color: #275699;
+    border-color: #275699;
+    opacity: 100%;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero-pagination .hero-pagination__bullet--current {
+  background-color: #275699;
+  border-color: #275699;
+  opacity: 100%;
+
+  &:focus {
+    border-color: $extra-color;
+    background-color: $extra-color;
+  }
+}

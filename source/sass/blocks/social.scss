@@ -1,0 +1,93 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+  }
+}
+
+.social__link {
+  width: 26px;
+  height: 26px;
+  background-color: $extra-color;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: #ffffff;
+    mask-size: cover;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    transition-property: background-color, opacity;
+    transition-duration: 0.2s;
+  }
+
+  &--vk::after {
+    width: 11.56px;
+    height: 6.3px;
+    mask-image: url("/__spritemap#sprite-vk-icon-view");
+  }
+
+  &--ok::after {
+    width: 6.83px;
+    height: 11.56px;
+    mask-image: url("/__spritemap#sprite-ok-icon-view");
+  }
+
+  &--reddit::after {
+    width: 10.51px;
+    height: 11.03px;
+    mask-image: url("/__spritemap#sprite-reddit-icon-view");
+  }
+
+  &:hover::after {
+    opacity: 70%;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    outline: none;
+  }
+
+  &:focus::after {
+    background-color: $extra-color;
+    opacity: 100%;
+  }
+
+  &:active {
+    background-color: #275699;
+  }
+
+  &:active::after {
+    background-color: #ffffff;
+    opacity: 100%;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 36px;
+    height: 36px;
+
+    &--vk::after {
+      width: 16px;
+      height: 8.73px;
+    }
+
+    &--ok::after {
+      width: 9.45px;
+      height: 16px;
+    }
+
+    &--reddit::after {
+      width: 14.55px;
+      height: 15.27px;
+    }
+  }
+}

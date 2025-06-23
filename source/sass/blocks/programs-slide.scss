@@ -1,0 +1,144 @@
+.programs-slide {
+  display: grid;
+  align-items: end;
+  width: 290px;
+  border-radius: 12px;
+  position: relative;
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(49, 109, 194, 0.2);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 12px;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 324px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 392px;
+  }
+}
+
+.programs-slide picture {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.programs-slide__image {
+  display: block;
+  border-radius: 12px;
+  width: 290px;
+  height: 400px;
+
+  @media (min-width: $tablet-width) {
+    width: 324px;
+    height: 420px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 392px;
+  }
+}
+
+.programs-slide__content {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 270px;
+  height: fit-content;
+  margin: 18px auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding: 18px;
+  padding-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  gap: 18px 29px;
+  position: relative;
+  z-index: 2;
+  min-height: 111px;
+
+  --nb-r: 18px;
+  --nb-cor1-rw: 12px;
+  --nb-cor1-rh: 12px;
+  --nb-cor2-rw: 12px;
+  --nb-cor2-rh: 12px;
+  --nb-w: 94px;
+
+  @media (min-width: $tablet-width) {
+    width: 284px;
+    margin: 10px auto;
+    column-gap: 16px;
+    min-height: 125px;
+
+    --nb-r: 18px;
+    --nb-w: 81px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 321px;
+    margin: 17px 0;
+    margin-left: 20px;
+    padding-bottom: 15.5px;
+    row-gap: 18.5px;
+    min-height: 123px;
+
+    --nb-r: 18px;
+    --nb-w: 97px;
+  }
+}
+
+.programs-slide__title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  color: $extra-color;
+  margin: 0;
+  grid-column: 1/3;
+  width: 110px;
+  margin-bottom: auto;
+  min-height: 18px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 14px;
+    width: 137px;
+    min-height: 14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    line-height: 17px;
+    width: 164px;
+    min-height: 17px;
+  }
+}
+
+.programs-slide__content p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 18px;
+  }
+}
