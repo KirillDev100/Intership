@@ -1,0 +1,193 @@
+.button {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $extra-color;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  padding-left: 21px;
+  outline: 1px solid $extra-color;
+  outline-offset: -1px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box;
+  position: relative;
+  transition-duration: 0.2s;
+  transition-property: background-color, outline-color, color;
+  width: fit-content;
+  max-width: 100%;
+
+  &--on-dark {
+    outline-color: #ffffff;
+    color: #ffffff;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 34px;
+    background-color: $extra-color;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+    flex-shrink: 0;
+  }
+
+  &--on-dark::after {
+    background-color: #ffffff;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    mask-image: url("/__spritemap#sprite-arrow-angled-icon-view");
+    mask-size: 100%;
+    transition-duration: 0.2s;
+    transform-origin: center;
+  }
+
+  &--on-dark::before {
+    background-color: $extra-color;
+  }
+
+  &:hover {
+    background-color: $extra-color;
+    color: #ffffff;
+  }
+
+  &--on-dark:hover {
+    background-color: #ffffff;
+    color: $extra-color;
+  }
+
+  &:hover::after {
+    background-color: #ffffff;
+  }
+
+  &--on-dark:hover::after {
+    background-color: $extra-color;
+  }
+
+  &:hover::before,
+  &:active::before,
+  &:focus::before {
+    background-color: $extra-color;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &--on-dark:hover::before {
+    background-color: #ffffff;
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: $extra-color;
+    outline: 1px solid $extra-color;
+  }
+
+  &--on-dark:focus {
+    color: #ffffff;
+    outline: 1px solid #ffffff;
+  }
+
+  &:focus::after {
+    background-color: $extra-color;
+  }
+
+  &--on-dark:focus::after {
+    background-color: #ffffff;
+  }
+
+  &:focus::before {
+    background-color: #ffffff;
+    opacity: 100%;
+  }
+
+  &--on-dark:focus::before {
+    background-color: $extra-color;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: $extra-color;
+  }
+
+  &--on-dark:active {
+    color: rgba(49, 109, 194, 0.7);
+    background-color: #ffffff;
+  }
+
+  &:active::after {
+    background-color: #ffffff;
+  }
+
+  &--on-dark:active::after {
+    background-color: $extra-color;
+  }
+
+  &:active::before {
+    opacity: 70%;
+    background-color: $extra-color;
+  }
+
+  &--on-dark:active::before {
+    background-color: #ffffff;
+  }
+
+  &[disabled],
+  &:disabled {
+    background-color: transparent;
+    color: $disabled-color;
+    outline-color: $disabled-color;
+    cursor: default;
+  }
+
+  &[disabled]::after,
+  &:disabled::after {
+    background-color: $disabled-color;
+  }
+
+  &[disabled]::before,
+  &:disabled::before {
+    background-color: #ffffff;
+    opacity: 60%;
+    transform: translateY(-50%);
+  }
+
+  @media (min-width: $tablet-width) {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.28px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-left: 31px;
+    gap: 30px;
+
+    &::after {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::before {
+      right: 24px;
+    }
+  }
+}
