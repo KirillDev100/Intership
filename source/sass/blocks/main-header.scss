@@ -1,0 +1,243 @@
+.main-header__bar {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: auto max-content;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: -74px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 30px;
+    margin-bottom: -86px;
+  }
+}
+
+.main-header__logo {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  position: relative;
+  z-index: 3;
+}
+
+.main-header__navigation-toggle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.28px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $extra-color;
+  box-sizing: border-box;
+  border: 1px solid $extra-color;
+  border-radius: 30px;
+  background-color: #ffffff;
+  padding: 3px 4px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 136px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  transition-property: width, background-color, color, border-color, gap;
+  transition-duration: 0.3s;
+  grid-column: 1/3;
+  grid-row: 1/3;
+  margin-left: auto;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 46px;
+    background-color: $extra-color;
+    border-radius: 50%;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    flex-shrink: 0;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 8px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    right: 19px;
+    transform: translateY(-50%);
+    mask-image: url("/__spritemap#sprite-toggle-icon-view");
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+  }
+
+  &--open {
+    background-color: $extra-color;
+    color: #ffffff;
+    width: 290px;
+    padding-right: 3px;
+    padding-left: 19px;
+  }
+
+  &--open::after {
+    background-color: #ffffff;
+  }
+
+  &--open::before {
+    background-color: $extra-color;
+    mask-image: url("/__spritemap#sprite-cross-icon-view");
+    width: 20px;
+    height: 20px;
+    right: 16px;
+  }
+
+  &:hover {
+    background-color: $extra-color;
+    color: #ffffff;
+  }
+
+  &--open:hover {
+    background-color: #ffffff;
+    color: $extra-color;
+  }
+
+  &:hover::after {
+    background-color: #ffffff;
+  }
+
+  &--open:hover::after {
+    background-color: $extra-color;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background-color: $extra-color;
+  }
+
+  &--open:hover::before {
+    background-color: #ffffff;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: $extra-color;
+    border-color: $extra-color;
+    outline-width: 2px;
+  }
+
+  &--open:focus {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: $extra-color;
+  }
+
+  &:focus::after {
+    background-color: $extra-color;
+  }
+
+  &--open:focus::after {
+    background-color: #ffffff;
+  }
+
+  &:focus::before {
+    background-color: #ffffff;
+    opacity: 100%;
+  }
+
+  &--open:focus::before {
+    background-color: $extra-color;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: $extra-color;
+  }
+
+  &--open:active {
+    color: rgba(49, 109, 194, 0.7);
+    background-color: #ffffff;
+  }
+
+  &:active::after {
+    background-color: #ffffff;
+  }
+
+  &--open:active::after {
+    background-color: $extra-color;
+  }
+
+  &:active::before {
+    opacity: 70%;
+    background-color: $extra-color;
+  }
+
+  &--open:active::before {
+    background-color: #ffffff;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: $disabled-color;
+    border-color: $disabled-color;
+    cursor: default;
+  }
+
+  &:disabled::after {
+    background-color: $disabled-color;
+  }
+
+  &:disabled::before {
+    background-color: #ffffff;
+    opacity: 60%;
+    transform: translateY(-50%);
+  }
+
+
+  @media (min-width: $tablet-width) {
+    padding: 4px;
+    padding-left: 20px;
+    grid-column: unset;
+    grid-row: unset;
+
+    &--open {
+      width: 286px;
+      padding: 3px;
+      padding-left: 19px;
+      margin: 1px 0;
+    }
+  }
+}
+
+.main-header__navigation {
+  padding: 0 25px;
+  position: absolute;
+  width: 240px;
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  top: calc(100% + 4px);
+  z-index: 10;
+  right: 15px;
+  transition-property: padding, max-height;
+  transition-duration: 0.3s;
+
+  @media (min-width: $tablet-width) {
+    width: 236px;
+    right: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: 100px;
+  }
+
+  &--open {
+    pointer-events: auto;
+    padding: 35px 25px;
+  }
+}

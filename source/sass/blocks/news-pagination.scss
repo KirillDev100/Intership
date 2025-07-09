@@ -1,0 +1,76 @@
+.news-pagination {
+  gap: 16px;
+  display: flex;
+
+  @media (min-width: $tablet-width) {
+    gap: 20px;
+  }
+}
+
+.news-pagination__bullet {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+  color: $extra-color;
+  opacity: 50%;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 6px 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 26px;
+  min-height: 26px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition-property: color, opacity, outline, background-color;
+  transition-duration: 0.2s;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+
+  &:hover {
+    color: $extra-color;
+    opacity: 100%;
+    outline-color: $extra-color;
+  }
+
+  &:focus {
+    color: $extra-color;
+    opacity: 100%;
+    outline: 2px solid $extra-color;
+    background-color: #ffffff;
+  }
+
+  &:active {
+    color: #ffffff;
+    opacity: 100%;
+    outline-color: transparent;
+    background-color: #275699;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 6px 3px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+}
+
+.news-pagination .news-pagination__bullet--current {
+  background-color: $extra-color;
+  color: #ffffff;
+  opacity: 100%;
+
+  &:focus {
+    color: $extra-color;
+    opacity: 100%;
+    outline: 2px solid $extra-color;
+    outline-offset: -2px;
+    background-color: #ffffff;
+  }
+}

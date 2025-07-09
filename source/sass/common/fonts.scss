@@ -1,0 +1,17 @@
+@mixin font-face($font-family, $font-weight, $font-style, $src-woff-2, $src-woff) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    src: $src-woff-2, $src-woff;
+    font-display: swap;
+  }
+}
+
+@include font-face("Manrope", 200, normal, url("../fonts/manrope-extralight.woff2") format("woff2"), url("../fonts/manrope-extralight.woff") format("woff"));
+@include font-face("Manrope", 300, normal, url("../fonts/manrope-light.woff2") format("woff2"), url("../fonts/manrope-light.woff") format("woff"));
+@include font-face("Manrope", 400, normal, url("../fonts/manrope-regular.woff2") format("woff2"), url("../fonts/manrope-regular.woff") format("woff"));
+@include font-face("Manrope", 500, normal, url("../fonts/manrope-medium.woff2") format("woff2"), url("../fonts/manrope-medium.woff") format("woff"));
+@include font-face("Manrope", 600, normal, url("../fonts/manrope-semibold.woff2") format("woff2"), url("../fonts/manrope-semibold.woff") format("woff"));
+@include font-face("Manrope", 700, normal, url("../fonts/manrope-bold.woff2") format("woff2"), url("../fonts/manrope-bold.woff") format("woff"));
+@include font-face("Manrope", 800, normal, url("../fonts/manrope-extrabold.woff2") format("woff2"), url("../fonts/manrope-extrabold.woff") format("woff"));

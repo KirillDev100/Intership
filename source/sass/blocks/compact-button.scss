@@ -1,0 +1,69 @@
+.compact-button {
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  background-color: $extra-color;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-property: background-color;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    mask-image: url("/__spritemap#sprite-arrow-angled-icon-view");
+    transition-duration: 0.2s;
+    transition-property: background-color, transform;
+    transform-origin: center;
+  }
+
+  &:hover {
+    background-color: #ffffff;
+  }
+
+  &:hover::after,
+  &:active::after,
+  &:focus::after {
+    background-color: $extra-color;
+    transform: rotate(45deg);
+  }
+
+  &:focus {
+    background-color: $extra-color;
+    outline: none;
+  }
+
+  &:focus::after {
+    background-color: #ffffff;
+    opacity: 100%;
+  }
+
+  &:active {
+    background-color: #ffffff;
+  }
+
+  &:active::after {
+    opacity: 70%;
+    background-color: $extra-color;
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: $disabled-color;
+    cursor: default;
+  }
+
+  &:disabled::after,
+  &[disabled]::after {
+    background-color: #ffffff;
+    opacity: 100%;
+    transform: none;
+  }
+}
